@@ -41,11 +41,13 @@ app.post("/",function(req,res){
   request(option, function(error, response, body){
     if(error){
       res.sendFile(__dirname + "/failure.html");
+      console.log(response.statusCode);
     } else{
       if (response.statusCode == 200){
         res.sendFile(__dirname + "/success.html");
       }
       else{
+        console.log(response.statusCode);
         res.sendFile(__dirname + "/failure.html");
       }
     }
